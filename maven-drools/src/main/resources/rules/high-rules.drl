@@ -1,0 +1,44 @@
+package rules
+
+import java.util.List;
+import com.vincent.entity.*;
+
+// 定义全局变量
+global java.util.List myGlobalList
+
+//rule "global_rule_1"
+//    when
+//        eval(true)
+//    then
+//        myGlobalList.add("Hello world");
+//        System.out.println("global_rule_1 is execution...");
+//end
+//
+//rule "global_rule_2"
+//    when
+//        eval(true)
+//    then
+//        System.out.println("myGlobalList集合元素个数"+myGlobalList.size());
+//        System.out.println("global_rule_2 is execution...");
+//end
+
+
+//query "query_1"
+//    $person:Person(age > 30);
+//end
+//
+//query "query_2"(String nameParam)
+//    $person:Person(age> 30, name == nameParam);
+//end
+
+function String format(String name) {
+    return "hello " + name;
+}
+
+rule "function_rule"
+    when
+        $person:Person(name != null && age > 30);
+    then
+        String ret = format($person.getName());
+        System.out.println(ret);
+end

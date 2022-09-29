@@ -1,0 +1,94 @@
+package rules
+
+import com.vincent.entity.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+
+// salience指定规则执行优先级  数字越大，优先级越高
+//rule "attribute_rule1"
+//salience 1
+//    when
+//        eval(true)
+//    then
+//        System.out.println("rule1 ....");
+//end
+//
+//rule "attribute_rule2"
+//salience 2
+//    when
+//        eval(true)
+//    then
+//        System.out.println("rule2 ....");
+//end
+
+// date-effective 指定规则生效时间
+//rule "attribute_rule3"
+//    date-effective "2022-09-28" // 当前日期不小于2022-09-28时可执行
+//    when
+//        eval(true);
+//    then
+//        System.out.println("attribute_rule3 is execution");
+//end
+//
+//
+//// date-expires 指定规则过期时间
+//rule "attribute_rule4"
+//    date-expires "2022-09-28" // 当前日期不小于2022-09-28时可执行
+//    when
+//        eval(true);
+//    then
+//        System.out.println("attribute_rule3 is execution");
+//end
+
+
+//  activation-group分组  具有相同分组名称的规则只能有一个规则被触发  salience高的会执行
+//rule "rule_activationgroup_1"
+//    activation-group "mygroup"
+//    salience 1
+//    when
+//    then
+//        System.out.println("规则rule_activationgroup_1触发");
+//end
+//
+//rule "rule_activationgroup_2"
+//    activation-group "mygroup"
+//    salience 2
+//    when
+//    then
+//        System.out.println("规则rule_activationgroup_2触发");
+//end
+
+
+//rule "rule_agendagroup_1"
+//    agenda-group "myagendagroup_1"
+//    auto-focus // 自动获取焦点
+//    when
+//    then
+//        System.out.println("规则rule_agendagroup_1触发");
+//end
+//
+//rule "rule_agendagroup_2"
+//    agenda-group "myagendagroup_1"
+//    when
+//    then
+//        System.out.println("规则rule_agendagroup_2触发");
+//end
+
+
+// timer 定时器
+//rule "rule_timer_1"
+//    timer (5s 2s) //含义：5秒后触发，然后每隔2秒触发一次
+//    when
+//    then
+//        System.out.println("规则rule_timer_1触发，触发时间为：" +
+//                         new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
+//end
+
+rule "rule_timer_2"
+    timer (cron:0/1 * * * * ?) //含义：每隔1秒触发一次
+    when
+    then
+        System.out.println("规则rule_timer_2触发，触发时间为：" +
+                         new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
+end
