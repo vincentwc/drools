@@ -1,6 +1,6 @@
-package com.vincent.service;
+package com.vincent.drools.service;
 
-import com.vincent.entity.Order;
+import com.vincent.drools.entity.Order;
 
 /**
  * @author wang_cheng

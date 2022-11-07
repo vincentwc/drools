@@ -1,6 +1,6 @@
 package rules;
 
-import com.vincent.entity.Order;
+import com.vincent.drools.entity.Order;
 
 // 100元以下，不加分
 rule "score_1"

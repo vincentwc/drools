@@ -1,7 +1,7 @@
-package com.vincent.controller;
+package com.vincent.drools.controller;
 
-import com.vincent.entity.Order;
-import com.vincent.service.RuleService;
+import com.vincent.drools.entity.Order;
+import com.vincent.drools.service.RuleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

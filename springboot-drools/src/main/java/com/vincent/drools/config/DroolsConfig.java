@@ -1,4 +1,4 @@
-package com.vincent.config;
+package com.vincent.drools.config;
 
 import org.kie.api.KieBase;
 import org.kie.api.KieServices;

@@ -33,3 +33,4 @@ build/
 .vscode/
 /maven-drools/target/
 /springboot-drools/.mvn/
+/springboot-template/.mvn/

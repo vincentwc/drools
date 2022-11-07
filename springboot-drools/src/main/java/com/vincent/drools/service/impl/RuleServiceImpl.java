@@ -1,7 +1,7 @@
-package com.vincent.service.impl;
+package com.vincent.drools.service.impl;
 
-import com.vincent.entity.Order;
-import com.vincent.service.RuleService;
+import com.vincent.drools.entity.Order;
+import com.vincent.drools.service.RuleService;
 import org.kie.api.KieBase;
 import org.kie.api.runtime.KieSession;
 import org.springframework.beans.factory.annotation.Autowired;

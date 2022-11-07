@@ -1,4 +1,4 @@
-package com.vincent.entity;
+package com.vincent.drools.entity;
 
 /**
  * @author wang_cheng

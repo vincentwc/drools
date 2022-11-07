@@ -1,8 +1,8 @@
 package com.vincent.test;
 
-import com.vincent.entity.Customer;
-import com.vincent.entity.Order;
-import com.vincent.entity.Person;
+import com.vincent.drools.entity.Customer;
+import com.vincent.drools.entity.Order;
+import com.vincent.drools.entity.Person;
 import org.drools.core.base.RuleNameEqualsAgendaFilter;
 import org.junit.Test;
 import org.kie.api.KieServices;
