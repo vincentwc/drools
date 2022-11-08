@@ -16,10 +16,10 @@ SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
--- Table structure for field_date
+-- Table structure for field_data
 -- ----------------------------
-DROP TABLE IF EXISTS `field_date`;
-CREATE TABLE `field_date`
+DROP TABLE IF EXISTS `field_data`;
+CREATE TABLE `field_data`
 (
     `id`          bigint(20) NOT NULL AUTO_INCREMENT,
     `template_id` int(11)      DEFAULT NULL COMMENT '字段模板id',

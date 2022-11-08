@@ -46,7 +46,7 @@ public class CodeGeneratorUtil {
     /**
      * 包的基础路径
      */
-    private static final String BASE_PACKAGE_URL = "com.cecloud.cdp.cdppcd.utils.autoGenerator";
+    private static final String BASE_PACKAGE_URL = "com.vincent.template";
     /**
      * xml文件路径
      */
@@ -82,7 +82,7 @@ public class CodeGeneratorUtil {
         // 全局配置
         GlobalConfig globalConfig = new GlobalConfig();
         String projectPath = System.getProperty("user.dir");
-        globalConfig.setOutputDir(projectPath + "/src/main/java");
+        globalConfig.setOutputDir(projectPath + "/springboot-template/src/main/java");
         globalConfig.setAuthor(AUTHOR);
         globalConfig.setOpen(false);
         globalConfig.setFileOverride(false);
@@ -103,8 +103,8 @@ public class CodeGeneratorUtil {
 
         // 包配置
         PackageConfig packageConfig = new PackageConfig();
-//        packageConfig.setModuleName("gen");
         packageConfig.setParent(BASE_PACKAGE_URL);
+        packageConfig.setXml(XML_PACKAGE_URL);
         generator.setPackageInfo(packageConfig);
 
         // 配置自定义代码模板
@@ -133,7 +133,7 @@ public class CodeGeneratorUtil {
         strategy.setEntityLombokModel(true);
         strategy.setRestControllerStyle(true);
         strategy.setInclude(scanner("表名"));
-//        strategy.setSuperEntityColumns("id");
+        strategy.setSuperEntityColumns("id");
         strategy.setControllerMappingHyphenStyle(true);
         strategy.setTablePrefix(packageConfig.getModuleName() + "_");
         generator.setStrategy(strategy);

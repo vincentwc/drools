@@ -34,3 +34,4 @@ build/
 /maven-drools/target/
 /springboot-drools/.mvn/
 /springboot-template/.mvn/
+/springboot-template/target/
