@@ -1,41 +1,48 @@
 package com.vincent.template.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import java.io.Serializable;
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.experimental.Accessors;
+import lombok.NoArgsConstructor;
+
+import java.util.List;
+import java.util.Map;
 
 /**
- * 
- *
- * @author vincent
- */
+ * @description: 自定义字段模板转json实体对象
+ * @author: xujt
+ * @date: 2022-02-14 10:25
+ **/
 @Data
-@EqualsAndHashCode(callSuper = false)
-@Accessors(chain = true)
-public class FieldTemplate implements Serializable {
-
-    private static final long serialVersionUID = 1L;
-
-            @TableId(value = "id", type = IdType.AUTO)
-    private Integer id;
+@AllArgsConstructor
+@NoArgsConstructor
+public class FieldTemplate {
+    /**
+     * 字段key名
+     */
+    private String field;
 
     /**
-     * 自定义字段关联表类型（1：客户，2：跟进任务）
+     * 字段显示名
+     */
+    private String label;
+
+    /**
+     * 是否必填
+     */
+    private boolean required;
+
+    /**
+     * 1：自字符串类型     2：boolean类型     3：日期时间类型    4：int类型 5:单选 6：多选
      */
     private Integer type;
 
     /**
-     * json自定义字段模板
+     * 单选或多选选项
      */
-    private String template;
+    private List<Map<Object,Object>> map;
 
     /**
-     * 备注
+     * 用于接受前端编辑自定义字段设置的值
      */
-    private String remark;
-
-
+    private Object value;
 }

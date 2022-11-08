@@ -1,21 +1,25 @@
 package com.vincent.template.entity;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 
 import java.io.Serializable;
-
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.experimental.Accessors;
 
 /**
- * @author vincent
+ * <p>
+ *
+ * </p>
+ *
+ * @author xujiangtao
+ * @since 2022-02-16
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-@Accessors(chain = true)
-public class FieldData implements Serializable {
+@TableName("field_template")
+public class Template implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -23,24 +27,19 @@ public class FieldData implements Serializable {
     private Integer id;
 
     /**
-     * 字段模板id
+     * 自定义字段关联表类型（1：客户，2：跟进任务）
      */
-    private Integer templateId;
+    private Integer type;
 
     /**
-     * 模板字段数据
+     * json自定义字段模板
      */
-    private String fieldData;
+    private String template;
 
     /**
      * 备注
      */
     private String remark;
-
-    /**
-     * 具体数据id
-     */
-    private Long objId;
 
 
 }
