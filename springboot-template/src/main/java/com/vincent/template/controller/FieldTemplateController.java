@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author vincent
  */
 @RestController
-@RequestMapping("//field-template")
+@RequestMapping("/field-template")
 public class FieldTemplateController {
 
 }

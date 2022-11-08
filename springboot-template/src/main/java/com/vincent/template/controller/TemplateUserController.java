@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author vincent
  */
 @RestController
-@RequestMapping("//template-user")
+@RequestMapping("/template-user")
 public class TemplateUserController {
 
 }
